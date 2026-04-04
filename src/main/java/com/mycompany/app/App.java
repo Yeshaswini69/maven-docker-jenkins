@@ -14,6 +14,6 @@ public class App {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello from MyApp running in Docker!";
+        return "Hello Yeshaswini, from MyApp, running in Docker!";
     }
 }
