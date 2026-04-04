@@ -45,7 +45,7 @@ myapp/
 └── README.md
 ```
 
-
+```markdown
 Setup Instructions
 ------------------
 
