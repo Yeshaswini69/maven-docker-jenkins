@@ -13,7 +13,7 @@ Runs a Docker container hosting the application.
 Ensures the updated application is live and accessible.
 
 Prerequisites
--------------
+------------- 
 
 Before starting, ensure the following tools and accounts are available:
 
