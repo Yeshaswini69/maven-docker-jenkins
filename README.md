@@ -46,8 +46,8 @@ myapp/
 ```
 ```
 
-
-Setup Instructions
+```markdown
+#Setup Instructions
 ------------------
 
 1. Maven Project
@@ -148,4 +148,5 @@ Ensures CI/CD process keeps the application up-to-date.
 
 
 ⚠️ Note: Using ngrok on localhost gives a dynamic URL — not recommended for production. Use a public server for Jenkins in real-world scenarios. give me proper readme file of this to put in github so thth the indententation n project structure stays the same in preview as well
+```
 ```
