@@ -33,7 +33,7 @@ ngrok account (optional: exposes public URL for Jenkins if using localhost)
 #Project Structure
 -----------------
 
-```text
+
 myapp/
 │
 ├── Jenkinsfile           # Pipeline definition for Jenkins 
@@ -43,7 +43,6 @@ myapp/
 │   ├── main/java/com/mycompany/app/App.java
 │   └── test/java/com/mycompany/app/AppTest.java
 └── README.md
-```
 
 
 
