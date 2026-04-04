@@ -32,7 +32,7 @@ Project Structure
 
 myapp/
 │
-├── Jenkinsfile           # Pipeline definition for Jenkins
+├── Jenkinsfile           # Pipeline definition for Jenkins 
 ├── Dockerfile            # Instructions to build Docker image
 ├── pom.xml               # Maven configuration file
 ├── src/
