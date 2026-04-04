@@ -1,7 +1,7 @@
-
+```
 CI/CD Pipeline Project with Jenkins, Maven, and Docker
 
-Project Overview
+#Project Overview
 ----------------
 This project demonstrates a full Continuous Integration (CI) and Continuous Deployment (CD) pipeline using Jenkins, Maven, Docker, and GitHub.
  
@@ -15,7 +15,7 @@ Ensures the updated application is live and accessible.
 
 ---
 
-Prerequisites
+#Prerequisites
 ------------- 
 
 Before starting, ensure the following tools and accounts are available:
@@ -30,7 +30,7 @@ Maven installed (or configure via Jenkins)
 ngrok account (optional: exposes public URL for Jenkins if using localhost)
 
 
-Project Structure
+#Project Structure
 -----------------
 
 ```text
@@ -43,6 +43,7 @@ myapp/
 │   ├── main/java/com/mycompany/app/App.java
 │   └── test/java/com/mycompany/app/AppTest.java
 └── README.md
+```
 ```
 
 
