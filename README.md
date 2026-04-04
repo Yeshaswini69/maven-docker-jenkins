@@ -1,86 +1,83 @@
-# CI/CD Pipeline Project with Jenkins, Maven, and Docker
+CI/CD Pipeline Project with Jenkins, Maven, and Docker
 
-## Project Overview
-This project demonstrates a full **Continuous Integration (CI) and Continuous Deployment (CD)** pipeline using **Jenkins**, **Maven**, **Docker**, and **GitHub**.
-
+##Project Overview
+----------------
+This project demonstrates a full Continuous Integration (CI) and Continuous Deployment (CD) pipeline using Jenkins, Maven, Docker, and GitHub.
+ 
 Whenever code is pushed to GitHub:
 
-1. Jenkins automatically builds the project using Maven.
-2. Creates a Docker image of the application.
-3. Pushes the image to DockerHub.
-4. Runs a Docker container hosting the application.
-5. Ensures the updated application is live and accessible.
+Jenkins automatically builds the project using Maven.
+Creates a Docker image of the application.
+Pushes the image to DockerHub.
+Runs a Docker container hosting the application.
+Ensures the updated application is live and accessible.
 
 ---
 
-## Prerequisites
+Prerequisites
+------------- 
+
 Before starting, ensure the following tools and accounts are available:
 
-- Jenkins installed ([http://localhost:8080](http://localhost:8080))
-- GitHub account and repository
-- Docker Desktop installed
-- DockerHub account (to push Docker images)
-- Git installed
-- Java JDK installed
-- Maven installed (or configure via Jenkins)
-- ngrok account (optional: exposes public URL for Jenkins if using localhost)
+Jenkins installed (http://localhost:8080)
+GitHub account and repository
+Docker Desktop installed
+DockerHub account (to push Docker images)
+Git installed
+Java JDK installed
+Maven installed (or configure via Jenkins)
+ngrok account (optional: exposes public URL for Jenkins if using localhost)
 
----
 
-## Project Structure
+Project Structure
+-----------------
+
+```text
 myapp/
 │
-├── Jenkinsfile # Pipeline definition for Jenkins
-├── Dockerfile # Instructions to build Docker image
-├── pom.xml # Maven configuration file
+├── Jenkinsfile           # Pipeline definition for Jenkins 
+├── Dockerfile            # Instructions to build Docker image
+├── pom.xml               # Maven configuration file
 ├── src/
-│ ├── main/java/com/mycompany/app/App.java
-│ └── test/java/com/mycompany/app/AppTest.java
+│   ├── main/java/com/mycompany/app/App.java
+│   └── test/java/com/mycompany/app/AppTest.java
 └── README.md
 
 
----
+Setup Instructions
+------------------
 
-## Setup Instructions
+1. Maven Project
+Create Maven project with the following structure:
 
-### 1. Maven Project
-Create a Maven project with the following structure:
+```text
 src/
 ├── main/java/com/mycompany/app/App.java
 └── test/java/com/mycompany/app/AppTest.java
 pom.xml
+pom.xml: Defines dependencies, plugins, and build steps.
+Used by Maven to build the application artifact (.jar) in target/.
+App.java: Contains the main application code.
+Example: Spring Boot application with server running on 8080.
+Server port: server.port=8080 (application port inside Docker container).
 
-
-- **pom.xml**: Defines dependencies, plugins, and build steps. Used by Maven to build the application artifact (`.jar`) in `target/`.
-- **App.java**: Contains the main application code.
-  - Example: Spring Boot application with server running on `8080`.
-  - Server port: `server.port=8080` (application port inside Docker container).
-
----
-
-### 2. Dockerfile
+2. Dockerfile
 Builds a Docker image of the application.
-
-```dockerfile
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY target/myapp-1.0-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
-### 3. Jenkins Configuration
-Install Jenkins Plugins:
-GitHub integration
-Pipeline
-Docker Pipeline
-Global Credentials:
-GitHub creds: For Jenkins to pull repo
-DockerHub creds: To push images
+3. Jenkins Configuration
+Install Jenkins Plugins:GitHub integration Pipeline, Docker Pipeline
 
+Global Credentials:
+GitHub creds: for Jenkins to pull repo
+DockerHub creds: to push images
 Used in Jenkinsfile as github-creds and docker-creds.
 
-Jenkinsfile Example:
-
+Jenkinsfile: Define pipeline stages.
 pipeline {
     agent any
     tools { maven 'Maven3' }
@@ -122,32 +119,28 @@ pipeline {
     }
 }
 
-### 4. GitHub Webhook
-
+4. GitHub Webhook
 Purpose: Trigger Jenkins automatically on code push.
 
 Setup:
-
 Use ngrok public URL (or public server IP)
 Configure webhook in GitHub → Settings → Webhooks
 Event: push
 Target URL: <ngrok-or-server-url>/github-webhook/
 
-### 5. Running the Pipeline
+6. Running the Pipeline
 Push code changes to GitHub (main branch).
 Jenkins webhook triggers the pipeline.
 Pipeline stages execute:
 Maven build → creates .jar
 Docker image build → push to DockerHub
 Docker container runs → application accessible at http://<server-ip>:8081
-
 Verify Docker container status:
-
 docker ps
 
-### 6. Continuous Integration & Deployment
+8. Continuous Integration & Deployment
 Any subsequent code changes and pushes to GitHub automatically trigger the Jenkins pipeline.
 Ensures CI/CD process keeps the application up-to-date.
 
-⚠️ Note:
-Using ngrok on localhost gives a dynamic URL — not recommended for production. Use a public server for Jenkins in real-world scenarios.
+
+⚠️ Note: Using ngrok on localhost gives a dynamic URL — not recommended for production. Use a public server for Jenkins in real-world scenarios. give me proper readme file of this to put in github so thth the indententation n project structure stays the same in preview as well
