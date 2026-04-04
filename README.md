@@ -1,6 +1,7 @@
+```markdown
 CI/CD Pipeline Project with Jenkins, Maven, and Docker
 
-##Project Overview
+Project Overview
 ----------------
 This project demonstrates a full Continuous Integration (CI) and Continuous Deployment (CD) pipeline using Jenkins, Maven, Docker, and GitHub.
  
@@ -42,6 +43,7 @@ myapp/
 │   ├── main/java/com/mycompany/app/App.java
 │   └── test/java/com/mycompany/app/AppTest.java
 └── README.md
+```
 
 
 Setup Instructions
@@ -55,6 +57,7 @@ src/
 ├── main/java/com/mycompany/app/App.java
 └── test/java/com/mycompany/app/AppTest.java
 pom.xml
+```
 pom.xml: Defines dependencies, plugins, and build steps.
 Used by Maven to build the application artifact (.jar) in target/.
 App.java: Contains the main application code.
@@ -144,3 +147,4 @@ Ensures CI/CD process keeps the application up-to-date.
 
 
 ⚠️ Note: Using ngrok on localhost gives a dynamic URL — not recommended for production. Use a public server for Jenkins in real-world scenarios. give me proper readme file of this to put in github so thth the indententation n project structure stays the same in preview as well
+```
