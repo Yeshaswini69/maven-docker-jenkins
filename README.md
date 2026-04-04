@@ -52,13 +52,12 @@ myapp/
 1. Maven Project
 Create Maven project with the following structure:
 
-```text
+
 src/
 ├── main/java/com/mycompany/app/App.java
 └── test/java/com/mycompany/app/AppTest.java
 pom.xml
-```
-```markdown
+
 pom.xml: Defines dependencies, plugins, and build steps.
 Used by Maven to build the application artifact (.jar) in target/.
 App.java: Contains the main application code.
