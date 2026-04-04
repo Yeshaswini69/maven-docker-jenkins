@@ -1,4 +1,4 @@
-```markdown
+
 CI/CD Pipeline Project with Jenkins, Maven, and Docker
 
 Project Overview
@@ -45,7 +45,7 @@ myapp/
 └── README.md
 ```
 
-```markdown
+
 Setup Instructions
 ------------------
 
